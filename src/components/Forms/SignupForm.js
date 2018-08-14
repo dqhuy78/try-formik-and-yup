@@ -10,11 +10,12 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormHelperText from '@material-ui/core/FormHelperText'
+import Typography from '@material-ui/core/Typography'
 
 import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 
-class DemoForm extends Component {
+class SignupForm extends Component {
 
     render() {
         const {
@@ -25,8 +26,11 @@ class DemoForm extends Component {
 
         return (
             <Grid container justify='center' alignContent='center'>
-                <Grid item xs={6}>
+                <Grid item xs={6} md={4}>
                     <Paper elevation={4} style={{ padding: '20px 15px', marginTop: '30px' }}>
+                        <Typography variant="headline" gutterBottom>
+                            Signup
+                        </Typography>
                         <Form>
                             <FormControl fullWidth margin='normal' error={touched.username && !!errors.username}>
                                 <InputLabel>Username</InputLabel>
@@ -133,7 +137,7 @@ const FormikForm = withFormik({
             setSubmitting(false) // Set isSubmitting to false
         }, 2000)
     }
-})(DemoForm)
+})(SignupForm)
 
 
 export default FormikForm
